@@ -9,10 +9,10 @@ namespace RestaurantRaterMVC.Data.Entities
     public class RestaurantEntity
     {
         [Key]
-        public int Id { get; set; }
+        public int RestaurantId { get; set; }
         [Required]
         [MaxLength(100)]
-        public string Name { get; set; }
+        public string RestaurantName { get; set; }
         [Required]
         [MaxLength(100)]
         public string Location { get; set; }
@@ -38,7 +38,7 @@ namespace RestaurantRaterMVC.Data.Entities
                 return Ratings.Count > 0 ? Ratings.Select(r => r.AtmosphereScore).Sum() / Ratings.Count : 0;
             }
         }
-        public double Score
+        public double AverageScore
         {
             get
             {
